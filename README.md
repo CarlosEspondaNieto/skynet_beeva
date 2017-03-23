@@ -7,17 +7,25 @@ Instalar elasticsearch en su versión 5.2.2
 Instalar python en su versión 3.6
 Instalar apache en su versión 2.4.6
 
-#Instrucciones FRONT-END
-Se usó la versión de apache predeterminada que trae centos 7: Apache/2.4.6 (CentOS)
+## Instrucciones FRONT-END
+	*Se usó la versión de apache predeterminada que trae centos 7: Apache/2.4.6 (CentOS)
+	*Importante:Los siguientes pasos se hicieron como root.
+	*inicializar el servicio apache con el comando:
+	
+**systemctl start httpd**
 
-En la carpeta /var/www/html/ clonar el repositorio “skynet_beeva”.
-comando:
+	*En la carpeta /var/www/html/ clonar el repositorio “skynet_beeva”.
+	*comando:*
 **git clone https://github.com/drefk99/skynet_beeva.git **
 
-en ese directorio skynet_beeva crear el virtualenv con el comando
+	*en ese directorio skynet_beeva crear el virtualenv con el comando
 **virtualenv -p python3.6 env **
-
-Esta carpeta contiene varias carpetas:
+	
+	*activar el virtualenv*
+**source env/bin/activate**
+	
+	*A continuación  instalar el archivo requirements.txt que instala los paquetes necesarios de los scripts:
+**pip install -r requirements.txt**
 
     *En al carpeta “data” contiene los json de elasticsearch el cual manda los datos historios y además se
     recuperan los json de python de los datos mas relevantes obtenidos del día y además contiene el JavaScript de
@@ -57,7 +65,7 @@ ip_o_host:9200/skynet_beeva/nombre_banco/aaaa-mm-dd?pretty=true
 
 # Scripts de Python para el análisis
 
-* Instalar los requirements.txt
+
 
 * En el script de extract.py es necesario agregar las credenciales para acceder a la API de Twitter. 
 
